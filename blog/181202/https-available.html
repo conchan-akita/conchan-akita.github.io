@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>conchan.akita.jpのキャンプ場</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="サーバ故障のため臨時に用意したサイトです">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/originalStyle.css">
+<script type="text/javascript" src="../../js/openclose.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="logo"></a></h1>
+</header>
+
+<nav id="menubar">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li class="current"><li><a href="../../author.html">Author</a></li>
+<!--<li><a href="gallery.html">Gallery</a></li>
+<li><a href="link.html">Link</a></li>-->
+<li><a href="../../blog/blogindex.html">Blog</a></li>
+</ul>
+</nav>
+
+<div id="contents">
+
+<section>
+<h2>HPをhttps接続できるようにした(2018年12月2日)</h2>
+
+<div class="box">
+この記事は、<a href="https://adventar.org/calendars/3709">conchan_akitaの1人 Advent Calendar 2018</a>の2日目の記事です。
+</div>
+
+<p>こんにちは。<br>
+コンちゃんこと佐々木です。</p>
+
+<p>当サイトをhttps接続できるようにしました。<br>
+アドレスバーをご覧いただくとhttps～ってなっていると思います。</p>
+
+<p>当サイトはGitHub Pagesを使用していますが、運営当初はGitHub PagesがSSL未対応で、外部サービスの利用などで工夫しないとSSL化できませんでした。<br>
+それがですね、いつの間にか公式で対応していまして、昨日気づいたのでさっさとhttps接続OKにしました。</p>
+
+<p>設定はちょいとつまづきました。<br>
+まず、GitHub Pages側のIPアドレスが変わっていたので修正します。</p>
+
+<p>
+<img src="images/before.png" alt="before">
+</p>
+
+<p>↑before<br>
+↓after</p>
+
+<p>
+<img src="images/after.png" alt="after">
+</p>
+
+<p>ついでにCNAMEを追加しました。<br>
+www.conchan.akita.jpでも当サイトにたどり着きます。</p>
+
+<p>
+<br>
+<img src="images/wait.png" alt="checkbox">
+</p>
+
+<p>これでEnforce HTTPSにチェック入れられる、と思ったら待ち時間あり。<br>
+ちょいと待ったらチェック入れられるようになりました。</p>
+
+<p>やっとhttpsで接続できますが、なぜかChromeで「保護されていない通信」と出る。<br>
+開発者ツールで確認すると「ERR_CERT_COMMON_NAME_INVALID」エラー。<br>
+Custom domain項を削除してもう1度登録してみたり混在コンテンツ(httpでの読み込み箇所)の有無確認したりしたけどダメ。<br>
+そのうちに眠くなったので寝るなど。</p>
+
+<p>起きて、治ってるかな～と確認するも「保護されていない通信」と出る...<br>
+だがエラーが変わっている。<br>
+「Active content with certificate errors」...はて？</p>
+
+<p>検索すると、開発者ツールのApplicationタブからClear site dataしろとのことで、やる。<br>
+これで解決しました！！<br>
+いやーよかった。</p>
+
+<p>最後に参考リンクを列記しておきます。<br>
+<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/">Securing your GitHub Pages site with HTTPS</a><br>
+<a href="https://help.github.com/articles/troubleshooting-custom-domains/#https-errors">Troubleshooting custom domains</a><br>
+<a href="https://help.github.com/articles/setting-up-an-apex-domain-and-www-subdomain/">Setting up an apex domain and www subdomain</a><br>
+<a href="https://qiita.com/Arashi/items/51fd9cfd442345a1b55d">Active content with certificate errors の対処方法</a>
+</p>
+
+
+</section>
+
+</div>
+<!--/contents-->
+
+<footer>
+<small>Copyright&copy; <a href="../../index.html">conchan.akita.jpのキャンプ場</a> All Rights Reserved.</small>
+<span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+</footer>
+
+</div>
+<!--/container-->
+
+</body>
+</html>
